@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
+import keepAwake from "./keepawake";
 import { startListenMessages } from "./listen";
 
 startListenMessages();
+
+keepAwake(true);
 
 export default function App() {
   return (
