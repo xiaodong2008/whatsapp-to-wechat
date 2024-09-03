@@ -2,27 +2,27 @@ import pc from "picocolors";
 
 function addPrefix(head, msg) {
   const time = new Date().toLocaleTimeString();
-  return `[${time}] <${head}> ${msg}`;
+  console.log(`[${time}]`, `<${head}>`, ...msg);
 }
 
-function log(msg) {
-  console.log(addPrefix("log", msg));
+function log() {
+  addPrefix("log", arguments);
 }
 
-function success(msg) {
-  console.log(pc.green(addPrefix("success", msg)));
+function success() {
+  addPrefix(pc.green("success"), arguments);
 }
 
-function status(msg) {
-  console.log(pc.gray(addPrefix("status", msg)));
+function status() {
+  addPrefix(pc.gray("status"), arguments);
 }
 
-function error(msg) {
-  console.error(pc.red(addPrefix("error", msg)));
+function error() {
+  addPrefix(pc.red("error"), arguments);
 }
 
-function warn(msg) {
-  console.warn(pc.yellow(addPrefix("warn", msg)));
+function warn() {
+  addPrefix(pc.yellow("warn"), arguments);
 }
 
 export default {

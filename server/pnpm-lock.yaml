@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      body-parser:
+        specifier: ^1.20.2
+        version: 1.20.2
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       p-timeout:
         specifier: ^6.1.2
         version: 6.1.2

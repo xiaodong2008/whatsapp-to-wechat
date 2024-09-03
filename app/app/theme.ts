@@ -23,6 +23,13 @@ export default {
       padding: 10,
       borderRadius: 12,
     },
+    input: {
+      padding: 4,
+      borderRadius: 8,
+      borderColor: 'gray',
+      borderWidth: 1,
+      width: 300,
+    },
   }),
   textColor: StyleSheet.create({
     red: {
