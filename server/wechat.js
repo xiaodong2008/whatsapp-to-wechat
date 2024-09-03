@@ -18,15 +18,15 @@ export function setupWechat() {
   wechatBot
     .on("login", (user) => {
       output.status(`${user.name() + user.id} logged in wechat`);
+      output.warn(
+        "Now, please click into the room you want to forward messages to."
+      );
     })
     .on("logout", (user) => {
       output.status(`${user.name()} logged out wechat`);
     })
     .on("ready", () => {
       output.status("User is ready");
-      output.warn(
-        "Now, please click into the room you want to forward messages to."
-      );
     });
 
   wechatBot.on("message", async (msg) => {
