@@ -21,10 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/sendMsg", (req, res) => {
-  console.log(req.body);
-
   output.log("Received a request to send a message:", req.body);
-  console.log(req.body.password, password);
   if (req.body.password !== password) {
     output.warn("Unauthorized Request:", req.body.password);
     res.status(401).send("Unauthorized");
