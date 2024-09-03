@@ -20,3 +20,5 @@ node_modules
 # Build directories
 build/
 .gradle/
+
+.env
