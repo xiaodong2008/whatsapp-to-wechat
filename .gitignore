@@ -1,2 +1,22 @@
 node_modules
 .expo
+
+# Android/IntelliJ
+/android/.gradle
+/android/app/build
+/android/.idea
+/android/local.properties
+
+# macOS
+.DS_Store
+
+# Misc
+*.log
+*.lock
+*.tmp
+*.swp
+*.iml
+
+# Build directories
+build/
+.gradle/
