@@ -33,6 +33,10 @@ app.post("/sendMsg", (req, res) => {
   if (msg === lastMsg) {
     return res.send("Repeated message");
   }
+  if (msg.includes("Checking for new messages")) {
+    return res.send("Ignored message");
+  }
+  lastMsg = msg;
   output.log(`Try to forward message: ${msg}`);
   wechat.send(msg);
   res.send("OK");
