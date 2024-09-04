@@ -12,6 +12,8 @@ const password = process.env.PASSWORD;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+let lastMsg = "";
+
 app.listen(port, () => {
   output.status(`Web server started: ${port}`);
 });
@@ -28,6 +30,9 @@ app.post("/sendMsg", (req, res) => {
     return;
   }
   const { msg } = req.body;
+  if (msg === lastMsg) {
+    return res.send("Repeated message");
+  }
   output.log(`Try to forward message: ${msg}`);
   wechat.send(msg);
   res.send("OK");
